@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E438D4B62BB0635700BEC409 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E438D4B52BB0635700BEC409 /* Extensions.swift */; };
+		E438D69C2BB733D800BEC409 /* DelayRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E438D69B2BB733D800BEC409 /* DelayRowView.swift */; };
+		E438D69E2BB7383500BEC409 /* DelayRowListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E438D69D2BB7383500BEC409 /* DelayRowListing.swift */; };
 		E48242B12BADCD84003096CF /* ConstructionTimer_V1_3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48242B02BADCD84003096CF /* ConstructionTimer_V1_3App.swift */; };
 		E48242B32BADCD84003096CF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48242B22BADCD84003096CF /* ContentView.swift */; };
 		E48242B52BADCD85003096CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E48242B42BADCD85003096CF /* Assets.xcassets */; };
@@ -14,6 +17,26 @@
 		E48242C22BADCD85003096CF /* ConstructionTimer_V1_3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48242C12BADCD85003096CF /* ConstructionTimer_V1_3Tests.swift */; };
 		E48242CC2BADCD86003096CF /* ConstructionTimer_V1_3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48242CB2BADCD85003096CF /* ConstructionTimer_V1_3UITests.swift */; };
 		E48242CE2BADCD86003096CF /* ConstructionTimer_V1_3UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48242CD2BADCD86003096CF /* ConstructionTimer_V1_3UITestsLaunchTests.swift */; };
+		E48242E12BADCE8A003096CF /* ButtonStyleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48242E02BADCE8A003096CF /* ButtonStyleService.swift */; };
+		E48242E32BADCEE6003096CF /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48242E22BADCEE6003096CF /* VisualEffectBlur.swift */; };
+		E48242E52BADCF19003096CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48242E42BADCF19003096CF /* AppDelegate.swift */; };
+		E48242E72BADCFF3003096CF /* TextFrameViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48242E62BADCFF3003096CF /* TextFrameViewModifier.swift */; };
+		E48242EA2BADD07C003096CF /* CoreDataContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E48242E82BADD07C003096CF /* CoreDataContainer.xcdatamodeld */; };
+		E48242EC2BADD1C3003096CF /* TImeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48242EB2BADD1C3003096CF /* TImeViewModel.swift */; };
+		E48242EE2BADD231003096CF /* JikanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48242ED2BADD231003096CF /* JikanViewModel.swift */; };
+		E48242F02BADD2A4003096CF /* CoreDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48242EF2BADD2A4003096CF /* CoreDataViewModel.swift */; };
+		E48242F22BADD683003096CF /* ProgressRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48242F12BADD683003096CF /* ProgressRing.swift */; };
+		E48242F42BADD6D1003096CF /* NotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48242F32BADD6D1003096CF /* NotificationCenter.swift */; };
+		E48242F62BADD711003096CF /* JikanRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48242F52BADD711003096CF /* JikanRing.swift */; };
+		E48242F82BADD7B2003096CF /* OnboardingViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48242F72BADD7B2003096CF /* OnboardingViewCell.swift */; };
+		E48242FA2BADD808003096CF /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48242F92BADD808003096CF /* MessageView.swift */; };
+		E48242FC2BADD8DB003096CF /* TimerPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48242FB2BADD8DB003096CF /* TimerPickerView.swift */; };
+		E48242FE2BADD946003096CF /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48242FD2BADD946003096CF /* TimerView.swift */; };
+		E48243002BADDBFC003096CF /* JikanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48242FF2BADDBFC003096CF /* JikanView.swift */; };
+		E48243022BADDD83003096CF /* delayEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48243012BADDD83003096CF /* delayEnum.swift */; };
+		E48243062BADE47A003096CF /* DelayListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48243052BADE47A003096CF /* DelayListView.swift */; };
+		E48243082BADE4BD003096CF /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48243072BADE4BD003096CF /* MainTabView.swift */; };
+		E482430A2BADEA9F003096CF /* DelayListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48243092BADEA9F003096CF /* DelayListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +57,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E438D4B52BB0635700BEC409 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E438D69B2BB733D800BEC409 /* DelayRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayRowView.swift; sourceTree = "<group>"; };
+		E438D69D2BB7383500BEC409 /* DelayRowListing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayRowListing.swift; sourceTree = "<group>"; };
 		E48242AD2BADCD84003096CF /* ConstructionTimer V1.3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ConstructionTimer V1.3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E48242B02BADCD84003096CF /* ConstructionTimer_V1_3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructionTimer_V1_3App.swift; sourceTree = "<group>"; };
 		E48242B22BADCD84003096CF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +70,26 @@
 		E48242C72BADCD85003096CF /* ConstructionTimer V1.3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ConstructionTimer V1.3UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E48242CB2BADCD85003096CF /* ConstructionTimer_V1_3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructionTimer_V1_3UITests.swift; sourceTree = "<group>"; };
 		E48242CD2BADCD86003096CF /* ConstructionTimer_V1_3UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructionTimer_V1_3UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E48242E02BADCE8A003096CF /* ButtonStyleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyleService.swift; sourceTree = "<group>"; };
+		E48242E22BADCEE6003096CF /* VisualEffectBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
+		E48242E42BADCF19003096CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E48242E62BADCFF3003096CF /* TextFrameViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFrameViewModifier.swift; sourceTree = "<group>"; };
+		E48242E92BADD07C003096CF /* CoreDataContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataContainer.xcdatamodel; sourceTree = "<group>"; };
+		E48242EB2BADD1C3003096CF /* TImeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TImeViewModel.swift; sourceTree = "<group>"; };
+		E48242ED2BADD231003096CF /* JikanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JikanViewModel.swift; sourceTree = "<group>"; };
+		E48242EF2BADD2A4003096CF /* CoreDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewModel.swift; sourceTree = "<group>"; };
+		E48242F12BADD683003096CF /* ProgressRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRing.swift; sourceTree = "<group>"; };
+		E48242F32BADD6D1003096CF /* NotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenter.swift; sourceTree = "<group>"; };
+		E48242F52BADD711003096CF /* JikanRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JikanRing.swift; sourceTree = "<group>"; };
+		E48242F72BADD7B2003096CF /* OnboardingViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewCell.swift; sourceTree = "<group>"; };
+		E48242F92BADD808003096CF /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		E48242FB2BADD8DB003096CF /* TimerPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPickerView.swift; sourceTree = "<group>"; };
+		E48242FD2BADD946003096CF /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		E48242FF2BADDBFC003096CF /* JikanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JikanView.swift; sourceTree = "<group>"; };
+		E48243012BADDD83003096CF /* delayEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = delayEnum.swift; sourceTree = "<group>"; };
+		E48243052BADE47A003096CF /* DelayListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayListView.swift; sourceTree = "<group>"; };
+		E48243072BADE4BD003096CF /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		E48243092BADEA9F003096CF /* DelayListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +142,14 @@
 			children = (
 				E48242B02BADCD84003096CF /* ConstructionTimer_V1_3App.swift */,
 				E48242B22BADCD84003096CF /* ContentView.swift */,
-				E48242B42BADCD85003096CF /* Assets.xcassets */,
+				E48242DA2BADCDE5003096CF /* Components */,
+				E48242DC2BADCE0D003096CF /* Extensions */,
+				E48242DE2BADCE4A003096CF /* Model */,
+				E48242DB2BADCDF3003096CF /* Systems */,
+				E48242DD2BADCE26003096CF /* View */,
+				E48242DF2BADCE5B003096CF /* ViewModel */,
 				E48242B62BADCD85003096CF /* Preview Content */,
+				E48242B42BADCD85003096CF /* Assets.xcassets */,
 			);
 			path = "ConstructionTimer V1.3";
 			sourceTree = "<group>";
@@ -125,6 +177,71 @@
 				E48242CD2BADCD86003096CF /* ConstructionTimer_V1_3UITestsLaunchTests.swift */,
 			);
 			path = "ConstructionTimer V1.3UITests";
+			sourceTree = "<group>";
+		};
+		E48242DA2BADCDE5003096CF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E48242E02BADCE8A003096CF /* ButtonStyleService.swift */,
+				E48242F52BADD711003096CF /* JikanRing.swift */,
+				E48242F12BADD683003096CF /* ProgressRing.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E48242DB2BADCDF3003096CF /* Systems */ = {
+			isa = PBXGroup;
+			children = (
+				E48242E42BADCF19003096CF /* AppDelegate.swift */,
+				E48242F32BADD6D1003096CF /* NotificationCenter.swift */,
+			);
+			path = Systems;
+			sourceTree = "<group>";
+		};
+		E48242DC2BADCE0D003096CF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E48242E22BADCEE6003096CF /* VisualEffectBlur.swift */,
+				E438D4B52BB0635700BEC409 /* Extensions.swift */,
+				E48242E62BADCFF3003096CF /* TextFrameViewModifier.swift */,
+				E48242E82BADD07C003096CF /* CoreDataContainer.xcdatamodeld */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E48242DD2BADCE26003096CF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E48242FF2BADDBFC003096CF /* JikanView.swift */,
+				E48243052BADE47A003096CF /* DelayListView.swift */,
+				E48243092BADEA9F003096CF /* DelayListCell.swift */,
+				E438D69B2BB733D800BEC409 /* DelayRowView.swift */,
+				E438D69D2BB7383500BEC409 /* DelayRowListing.swift */,
+				E48243072BADE4BD003096CF /* MainTabView.swift */,
+				E48242F92BADD808003096CF /* MessageView.swift */,
+				E48242F72BADD7B2003096CF /* OnboardingViewCell.swift */,
+				E48242FB2BADD8DB003096CF /* TimerPickerView.swift */,
+				E48242FD2BADD946003096CF /* TimerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E48242DE2BADCE4A003096CF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E48242DF2BADCE5B003096CF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E48242ED2BADD231003096CF /* JikanViewModel.swift */,
+				E48242EF2BADD2A4003096CF /* CoreDataViewModel.swift */,
+				E48242EB2BADD1C3003096CF /* TImeViewModel.swift */,
+				E48243012BADDD83003096CF /* delayEnum.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +374,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E438D4B62BB0635700BEC409 /* Extensions.swift in Sources */,
+				E48242EE2BADD231003096CF /* JikanViewModel.swift in Sources */,
 				E48242B32BADCD84003096CF /* ContentView.swift in Sources */,
+				E48242EC2BADD1C3003096CF /* TImeViewModel.swift in Sources */,
 				E48242B12BADCD84003096CF /* ConstructionTimer_V1_3App.swift in Sources */,
+				E48242E72BADCFF3003096CF /* TextFrameViewModifier.swift in Sources */,
+				E48242F02BADD2A4003096CF /* CoreDataViewModel.swift in Sources */,
+				E48242F62BADD711003096CF /* JikanRing.swift in Sources */,
+				E48242FE2BADD946003096CF /* TimerView.swift in Sources */,
+				E48242EA2BADD07C003096CF /* CoreDataContainer.xcdatamodeld in Sources */,
+				E48242F42BADD6D1003096CF /* NotificationCenter.swift in Sources */,
+				E48243002BADDBFC003096CF /* JikanView.swift in Sources */,
+				E48243082BADE4BD003096CF /* MainTabView.swift in Sources */,
+				E48242FA2BADD808003096CF /* MessageView.swift in Sources */,
+				E48243062BADE47A003096CF /* DelayListView.swift in Sources */,
+				E438D69C2BB733D800BEC409 /* DelayRowView.swift in Sources */,
+				E48242FC2BADD8DB003096CF /* TimerPickerView.swift in Sources */,
+				E48242F82BADD7B2003096CF /* OnboardingViewCell.swift in Sources */,
+				E48242E12BADCE8A003096CF /* ButtonStyleService.swift in Sources */,
+				E438D69E2BB7383500BEC409 /* DelayRowListing.swift in Sources */,
+				E48243022BADDD83003096CF /* delayEnum.swift in Sources */,
+				E48242E52BADCF19003096CF /* AppDelegate.swift in Sources */,
+				E48242F22BADD683003096CF /* ProgressRing.swift in Sources */,
+				E48242E32BADCEE6003096CF /* VisualEffectBlur.swift in Sources */,
+				E482430A2BADEA9F003096CF /* DelayListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +728,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E48242E82BADD07C003096CF /* CoreDataContainer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E48242E92BADD07C003096CF /* CoreDataContainer.xcdatamodel */,
+			);
+			currentVersion = E48242E92BADD07C003096CF /* CoreDataContainer.xcdatamodel */;
+			path = CoreDataContainer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E48242A52BADCD84003096CF /* Project object */;
 }
