@@ -126,10 +126,6 @@ final class JikanViewModel: ObservableObject {
                 secondsToCompletion = 0
                 progress = 0
                 
-//            case .record:
-//                timer?.invalidate()
-//                secondsToCompletion = 0
-//                progress = 0
             case .record:
                 startTimer()
                 secondsToCompletion = totalTimeForCurrentSelection

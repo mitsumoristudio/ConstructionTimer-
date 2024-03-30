@@ -10,17 +10,17 @@ import SwiftUI
 
 struct JikanView: View {
     var buttonStyleConfig = ButtonStyleService()
+    
     @StateObject var viewModel = JikanViewModel()
     @Environment(\.scenePhase) var scenePhase
- //   @StateObject var coreDataVM: CoreDataViewModel
    @EnvironmentObject var coreDataVM : CoreDataViewModel
-    @EnvironmentObject var jikanEntity : JikanEntity
+ //   @StateObject var jikanEntity : JikanEntity
     @Environment(\.self) var enviornmentSelf
     
     let notification = NotificationCenter()
     @State var actualDelay : delayEnum = .none
     @State private var isPlaying: Bool = false
-    @State private var delayEncountered: String = "1 hr GC delay"
+    @State private var delayEncountered: String = ""
     var backgroundGradientlight =  Color(#colorLiteral(red: 0.2496928573, green: 0.2774389088, blue: 0.2719847858, alpha: 0.8977390315))
     
     
@@ -28,6 +28,13 @@ struct JikanView: View {
         Text(placeholder)
             .foregroundStyle(Color.white)
             .font(.title2)
+            .fontWeight(.bold)
+    }
+    
+    private func calloutText(withPlaceholder placeholder: String) -> some View {
+        Text(placeholder)
+            .foregroundStyle(Color.white)
+            .font(.headline)
             .fontWeight(.bold)
     }
     
@@ -77,7 +84,7 @@ struct JikanView: View {
         }
         .frame(width: 360, height: 240)
         .padding()
-        .offset(x:0, y: 30)
+        .offset(x:0, y: 46)
     }
 }
 
@@ -108,17 +115,11 @@ extension JikanView {
                     
                     let timeNow = DateFormatter()
                     timeNow.dateStyle = .none
-                    timeNow.timeStyle = .long
-                    let checkTimeNow = timeNow
+                    timeNow.timeStyle = .short
                     let laterTimeNow = timeNow
                     let timeOnlyformat = laterTimeNow.string(from: dateNow)
                     
-//                    isPlaying ? coreDateVM.addConstructionStartTime(category: actualDelay.rawValue, delayDescription: delayEncountered, startTime: "", startDate: timeformatDateTime) : coreDateVM.addConstructionEndTime(endTime: laterTimeNow.string(from: Date()), totalTime: viewModel.secondsToCompletion.asTimestamps)
-                    
-//                    isPlaying ? coreDataVM.addTime(topic: actualDelay.rawValue, startDate: timeformatDateTime, delay: delayEncountered, startTime: checkTimeNow.string(from: Date())) : coreDataVM.endDelayTime(finishTime: laterTimeNow.string(from: Date()))
                     isPlaying ? coreDataVM.addTestTime() : coreDataVM.addEndTime(category: actualDelay.rawValue, delayDescription: delayEncountered, categoryColor: coreDataVM.categoryColor, endTime: timeOnlyformat, totalTime: viewModel.secondsToCompletion.asTimestamps, startDate: timeformatDateTime)
-                    
-//                    isPlaying ? coreDataVM.addTestTime() : coreDataVM.addendtimeEntity(context: enviornmentSelf.managedObjectContext)
                     
                     viewModel.timeStates = isPlaying ? .active : .cancelled
                 }, label: {
@@ -182,7 +183,7 @@ extension JikanView {
 extension JikanView {
     // MARK: delaytextFieldView
     var delaytextFieldView: some View {
-   
+   // MARK: Color selection
         let colors: [String] = ["lightYellow","lightGreen","lightBlue","lightPurple","lightRed","lightOrange"]
         
         return VStack(alignment: .leading) {
@@ -207,14 +208,16 @@ extension JikanView {
                         .onTapGesture {
                             coreDataVM.categoryColor = color
                         }
-                    // add onTapgesture to interact with color
+                    // MARK: add onTapgesture to interact with color
                     
                 }
             }
             .padding(.horizontal, 40)
             .padding(.leading, 4)
-            .padding(.vertical, 4)
+            .padding(.vertical, 2)
                 
+            // MARK: Construction delay pickers
+            VStack {
                 HStack(spacing: 5) {
                     GradientIconButton(icon: "exclamationmark.triangle.fill")
                         .padding(.horizontal, 5)
@@ -223,13 +226,19 @@ extension JikanView {
                         ForEach(delayEnum.allCases, id: \.self) { delays in
                             Text(delays.rawValue)
                         }
+                        
                         .foregroundColor(Color.white)
                     }
                     .pickerStyle(.menu)
                     .font(.headline)
                 }
-                .padding(.horizontal, 30)
+            }
+    
+                .padding(.horizontal, 26)
                 .padding(.bottom)
+            
+            calloutText(withPlaceholder: "Description")
+                .padding(.horizontal, 30)
                 
                 HStack(spacing: 5) {
                     TextEditor(text: $delayEncountered)
@@ -240,16 +249,14 @@ extension JikanView {
             }
            
         
-            .frame(width: 370, height: 240)
+            .frame(width: 370, height: 270)
                 .background(backgroundGradientlight)
             .cornerRadius(20)
         
             .shadow(color: .secondary, radius: 4)
             .padding(.horizontal, 12)
-            .offset(y: -30)
+            .offset(y: -44)
         }
-    
-    
 }
 
 struct JikanView_Preview: PreviewProvider {

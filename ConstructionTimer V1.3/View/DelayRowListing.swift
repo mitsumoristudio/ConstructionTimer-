@@ -24,8 +24,11 @@ struct DelayRowListing: View {
                         coremodelVM.deleteDelayTime(indexSet: indexSet)
                     })
                 }
+                .onAppear {
+                    coremodelVM.fetchprojectDelayTime()
+                }
             }
-            .navigationTitle("Delay Listing")
+            .navigationTitle("Ongoing Delay")
             .navigationBarTitleDisplayMode(.inline)
             
             .refreshable {
@@ -33,7 +36,6 @@ struct DelayRowListing: View {
                             coremodelVM.fetchprojectDelayTime
                         }
                     }
-
         }
         
     }

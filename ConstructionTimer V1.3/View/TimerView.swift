@@ -121,7 +121,8 @@ extension TimerView {
                     notification.sendNotification(date: Date(), type: "time", timeInterval: timeInterval, title: "Time Interval", body: "This is a reminder that your time has passed the requested time")
                     
                 }, label: {
-                    buttonStyleConfig.startbutton()
+                    buttonStyleConfig.timerStartButton()
+                  //  buttonStyleConfig.startbutton()
                 })
             }
         }

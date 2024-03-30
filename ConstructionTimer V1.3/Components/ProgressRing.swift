@@ -11,7 +11,7 @@ import SwiftUI
 struct ProgressRing: View {
     @State var progress: CGFloat = 0.0
     @EnvironmentObject var progressVM : TimerViewModel
-  //  @Binding var progresslevel: Float
+
     
     func rotationalCircle() -> some View {
         Circle()
@@ -29,12 +29,10 @@ struct ProgressRing: View {
             rotationalCircle()
             
             Circle()
-             //   .trim(from: 0.0, to: min(progress, 1.0))
                 .trim(from: 0.0, to: min(progressVM.progress, 1.0))
                 .stroke(AngularGradient(gradient: Gradient(colors: [Color(#colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)), Color(#colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)), Color(#colorLiteral(red: 0.4392156899, green: 0.01176470611, blue: 0.1921568662, alpha: 1)), Color(#colorLiteral(red: 0.5921568627, green: 0.8509803922, blue: 0.8823529412, alpha: 1)), Color(#colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1))]), center: .center), style: StrokeStyle(lineWidth: 15.0, lineCap: .round, lineJoin: .round))
                 .rotationEffect(Angle(degrees: 360))
                 .rotationEffect(Angle(degrees: 270))
-         //       .animation(.easeInOut(duration: 1.0), value: progress)
                 .animation(.easeInOut(duration: 1.0), value: progressVM.progress)
         }
         .frame(width: 300, height: 300)

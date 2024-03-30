@@ -97,8 +97,7 @@ class CoreDataViewModel: ObservableObject {
         
     }
     
-    
-    
+
     func saveConstructionTime() {
         do {
             try persistentContainer.viewContext.save()

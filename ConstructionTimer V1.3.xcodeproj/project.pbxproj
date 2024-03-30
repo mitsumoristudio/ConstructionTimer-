@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E438D4B62BB0635700BEC409 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E438D4B52BB0635700BEC409 /* Extensions.swift */; };
 		E438D69C2BB733D800BEC409 /* DelayRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E438D69B2BB733D800BEC409 /* DelayRowView.swift */; };
 		E438D69E2BB7383500BEC409 /* DelayRowListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E438D69D2BB7383500BEC409 /* DelayRowListing.swift */; };
 		E48242B12BADCD84003096CF /* ConstructionTimer_V1_3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48242B02BADCD84003096CF /* ConstructionTimer_V1_3App.swift */; };
@@ -57,7 +56,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E438D4B52BB0635700BEC409 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E438D69B2BB733D800BEC409 /* DelayRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayRowView.swift; sourceTree = "<group>"; };
 		E438D69D2BB7383500BEC409 /* DelayRowListing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayRowListing.swift; sourceTree = "<group>"; };
 		E48242AD2BADCD84003096CF /* ConstructionTimer V1.3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ConstructionTimer V1.3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +192,7 @@
 			children = (
 				E48242E42BADCF19003096CF /* AppDelegate.swift */,
 				E48242F32BADD6D1003096CF /* NotificationCenter.swift */,
+				E48242E82BADD07C003096CF /* CoreDataContainer.xcdatamodeld */,
 			);
 			path = Systems;
 			sourceTree = "<group>";
@@ -202,9 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				E48242E22BADCEE6003096CF /* VisualEffectBlur.swift */,
-				E438D4B52BB0635700BEC409 /* Extensions.swift */,
 				E48242E62BADCFF3003096CF /* TextFrameViewModifier.swift */,
-				E48242E82BADD07C003096CF /* CoreDataContainer.xcdatamodeld */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -374,7 +371,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E438D4B62BB0635700BEC409 /* Extensions.swift in Sources */,
 				E48242EE2BADD231003096CF /* JikanViewModel.swift in Sources */,
 				E48242B32BADCD84003096CF /* ContentView.swift in Sources */,
 				E48242EC2BADD1C3003096CF /* TImeViewModel.swift in Sources */,

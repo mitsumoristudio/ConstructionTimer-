@@ -34,6 +34,19 @@ struct ButtonStyleService {
             .shadow(radius: 10)
     }
     
+    func timerStartButton() -> some View {
+        Text("Start")
+            .fontWeight(.semibold)
+            .font(.title2)
+            .padding()
+            .frame(width: 100, height: 200)
+            .foregroundStyle(.white)
+           // .background(Color(#colorLiteral(red: 0.1923083849, green: 0.6083164035, blue: 0.2002578062, alpha: 1)))
+            .background(Color(#colorLiteral(red: 0.08203943819, green: 0.3224852085, blue: 0.9777283072, alpha: 0.8851407285)))
+            .clipShape(Circle())
+            .shadow(radius: 10)
+    }
+    
     func cancelbutton() -> some View {
         Text("Cancel")
             .fontWeight(.semibold)
