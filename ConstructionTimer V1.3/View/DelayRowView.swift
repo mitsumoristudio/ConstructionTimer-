@@ -16,7 +16,6 @@ struct DelayRowView: View {
     @State  var totalTime: String
     @State var endTime: String
     
-    
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack(spacing: 0) {
@@ -34,7 +33,7 @@ struct DelayRowView: View {
                 .font(.title2)
                 .fontWeight(.bold)
                 .padding(.vertical, 12)
-                .lineLimit(2)
+                .lineLimit(4)
             
             HStack(alignment: .bottom, spacing: 2) {
                 VStack(alignment: .leading, spacing: 10) {

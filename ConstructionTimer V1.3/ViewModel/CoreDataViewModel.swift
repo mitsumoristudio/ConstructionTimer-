@@ -31,7 +31,7 @@ class CoreDataViewModel: ObservableObject {
             }
         })
         // MARK:  add fetchdelay time
-        fetchprojectDelayTime()
+     //   fetchprojectDelayTime()
     }
     
     // MARK: Save entity to CoreData
@@ -96,6 +96,26 @@ class CoreDataViewModel: ObservableObject {
         saveConstructionTime()
         
     }
+    
+    func saveDelays() {
+        do {
+            try persistentContainer.viewContext.save()
+        } catch let error {
+            print("Error found while saving data")
+        }
+        fetchDelays()
+    }
+    
+    func fetchDelays() {
+        let fetchRequest = NSFetchRequest<JikanEntity>(entityName: "JikanEntity")
+        
+        do {
+            savedEntities = try persistentContainer.viewContext.fetch(fetchRequest)
+        } catch let error {
+            print("Error fetching information \(error)")
+        }
+    }
+    
     
 
     func saveConstructionTime() {

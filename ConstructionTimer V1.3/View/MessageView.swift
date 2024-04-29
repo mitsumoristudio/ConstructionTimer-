@@ -27,9 +27,9 @@ struct MessageView: View {
             
             OnboardingViewCell(image: "clock.arrow.circlepath", headline: "Easy Formatting", subheadline: "Set specific delays and group them in category, provides setback duration. ")
             
-            OnboardingViewCell(image: "list.clipboard.fill", headline: "Simpify Construction Delay", subheadline: "Navigate through contractors delays by managing loss time")
+            OnboardingViewCell(image: "list.clipboard.fill", headline: "Simplify Construction Delay", subheadline: "Navigate through contractors delays by managing loss time")
             
-            OnboardingViewCell(image: "deskclock.fill", headline: "Countdown Timer", subheadline: "Keep track of meaningful tasks with ease and offers a clear view of remaining time")
+            OnboardingViewCell(image: "deskclock.fill", headline: "Countdown Timer", subheadline: "Keep track of meaningful delays with ease and offers a clear view of remaining time")
 
             Button {
                 withAnimation {

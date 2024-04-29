@@ -17,6 +17,8 @@ struct JikanView: View {
  //   @StateObject var jikanEntity : JikanEntity
     @Environment(\.self) var enviornmentSelf
     
+    @FocusState private var focusField: FocusTextTextField?
+    
     let notification = NotificationCenter()
     @State var actualDelay : delayEnum = .none
     @State private var isPlaying: Bool = false
@@ -38,25 +40,37 @@ struct JikanView: View {
             .fontWeight(.bold)
     }
     
+    enum FocusTextTextField {
+        case delayEncountered
+    }
+    
+    func focusStatesubmitData() {
+        focusField = nil
+        
+    }
+    
     var body: some View {
         NavigationStack {
-            ZStack {
-                
-                VStack(spacing: 5) {
-                    progressViewTimer
+            ScrollView() {
+                ZStack {
                     
-                    timerControlView
-                    
-                    delaytextFieldView
+                    VStack(spacing: 5) {
+                        progressViewTimer
+                        
+                        timerControlView
+                        
+                        delaytextFieldView
+                    }
+                  
+                    .offset(x: 0, y: -0)
+                    // add the offset to move column grid above
+                    Spacer()
                 }
-              
-                .offset(x: 0, y: -0)
-                // add the offset to move column grid above
-                Spacer()
+                .onChange(of: scenePhase) { _ , newPhase in
+                    viewModel.onChangeofScenePhase(newPhase)
             }
-            .onChange(of: scenePhase) { _ , newPhase in
-                viewModel.onChangeofScenePhase(newPhase)
             }
+            .scrollDismissesKeyboard(.immediately)
         }
     }
     
@@ -242,8 +256,14 @@ extension JikanView {
                 
                 HStack(spacing: 5) {
                     TextEditor(text: $delayEncountered)
+                        .focused($focusField, equals: .delayEncountered)
+                        .submitLabel(.done)
                         .modifier(TextFieldClearButton(nextText: $delayEncountered))
                         .modifier(ChangeSmallerFrameSize())
+                        
+                        .onSubmit {
+                            focusStatesubmitData()
+                        }
                 }
                 .font(.headline)
             }

@@ -3,8 +3,11 @@
     <entity name="JikanEntity" representedClassName="JikanEntity" syncable="YES" codeGenerationType="class">
         <attribute name="category" optional="YES" attributeType="String"/>
         <attribute name="categoryColor" optional="YES" attributeType="String"/>
+        <attribute name="client" optional="YES" attributeType="String"/>
         <attribute name="delayDescription" optional="YES" attributeType="String"/>
         <attribute name="endTime" optional="YES" attributeType="String"/>
+        <attribute name="projectlocation" optional="YES" attributeType="String"/>
+        <attribute name="projectName" optional="YES" attributeType="String"/>
         <attribute name="startDate" optional="YES" attributeType="String"/>
         <attribute name="starttime" optional="YES" attributeType="String"/>
         <attribute name="totaltime" optional="YES" attributeType="String"/>

@@ -8,24 +8,30 @@
 import SwiftUI
 
 struct DelayRowListing: View {
-    @StateObject var coremodelVM = CoreDataViewModel()
+    @EnvironmentObject var coreDataVM: CoreDataViewModel
+    @State private var needtoRefresh: Bool = false
     
     var body: some View {
      
         NavigationStack {
             VStack(alignment: .leading, spacing: 5) {
                 List {
-                    ForEach(coremodelVM.savedEntities, id: \.self) { delays in
-                        VStack {
-                            DelayRowView(category: delays.category ?? "", delayDescription: delays.delayDescription ?? "", categoryColor: delays.categoryColor ?? "", startDate: delays.startDate ?? "", totalTime: delays.totaltime ?? "", endTime: delays.endTime ?? "")
-                        }
+                    ForEach(coreDataVM.savedEntities.sorted(by: { $0.endTime ?? "" > $1.endTime ?? "" }), id: \.self) { delays in
+                        NavigationLink(destination: {
+//                            UpdateDetailView(coreDataVM: coreDataVM, needsRefresh: $needtoRefresh, delayCollection: delays)
+                           CategoryCell(coreDataVM: coreDataVM, needtoRefresh: $needtoRefresh, delayCollection: delays)
+                        }, label: {
+                            VStack {
+                                DelayRowView(category: delays.category ?? "", delayDescription: delays.delayDescription ?? "", categoryColor: delays.categoryColor ?? "", startDate: delays.startDate ?? "", totalTime: delays.totaltime ?? "", endTime: delays.endTime ?? "")
+                            }
+                        })
                     }
                     .onDelete(perform: { indexSet in
-                        coremodelVM.deleteDelayTime(indexSet: indexSet)
+                        coreDataVM.deleteDelayTime(indexSet: indexSet)
                     })
                 }
                 .onAppear {
-                    coremodelVM.fetchprojectDelayTime()
+                   coreDataVM.fetchprojectDelayTime()
                 }
             }
             .navigationTitle("Ongoing Delay")
@@ -33,7 +39,7 @@ struct DelayRowListing: View {
             
             .refreshable {
                         Task {
-                            coremodelVM.fetchprojectDelayTime
+                            coreDataVM.fetchprojectDelayTime
                         }
                     }
         }
@@ -43,6 +49,6 @@ struct DelayRowListing: View {
 
 struct DelayRowListing_Preview: PreviewProvider {
     static var previews: some View {
-        DelayRowListing()
+        DelayRowListing().environmentObject(CoreDataViewModel())
     }
 }
