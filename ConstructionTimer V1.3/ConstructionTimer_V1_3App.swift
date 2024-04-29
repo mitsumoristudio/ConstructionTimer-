@@ -23,8 +23,8 @@ struct ConstructionTimer_V1_3App: App {
     
     var body: some Scene {
         WindowGroup {
-         //   ContentView()
-            MainTabView().environmentObject(CoreDataViewModel())
+            ContentView().environmentObject(CoreDataViewModel())
+        //    MainTabView().environmentObject(CoreDataViewModel())
             // MARK: Set coredataviewmodel in JikanView to environmentObject
         }
     }

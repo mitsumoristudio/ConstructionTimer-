@@ -68,6 +68,22 @@ struct LoginView: View {
                         .cornerRadius(12)
                         .padding(.vertical, 10)
                 })
+                .disabled(password == "" || animate)
+                .opacity(password == "" ? 0.8 : 1)
+                .padding()
+                
+                Button(action: {
+                    Task {
+                        try await viewModel.singInwithGoogle()
+                    }
+                    
+                }, label: {
+                    googleinView()
+                })
+                
+                
+                
+                
                 Spacer()
                 
                 Divider()
@@ -92,3 +108,22 @@ struct LoginView_Preview: PreviewProvider {
         LoginView()
     }
 }
+
+extension LoginView {
+    func googleinView() -> some View {
+        VStack(alignment: .leading) {
+            HStack() {
+                Image("googlelogo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 35, height: 35, alignment: .center)
+                    .cornerRadius(20)
+                Text("Sign in with Google")
+            }
+            .frame(width: 352, height: 45)
+            .background(.ultraThinMaterial)
+            .clipShape(RoundedRectangle(cornerRadius: 20))
+            }
+        }
+    }
+

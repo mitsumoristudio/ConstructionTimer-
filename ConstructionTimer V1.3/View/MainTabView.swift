@@ -40,6 +40,15 @@ struct MainTabView: View {
                         }
                     }
                     .tag(2)
+                
+               CurrentUserProfileView()
+                    .tabItem {
+                        VStack {
+                            Image(systemName: "gearshape.fill")
+                            Text("Settings")
+                        }
+                    }
+                    .tag(3)
             }
         }
         .overlay(

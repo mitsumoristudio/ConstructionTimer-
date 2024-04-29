@@ -16,4 +16,5 @@ struct UserModel: Identifiable, Codable {
     let fullname: String
     let uid: String
     let username: String
+    var profileImageUrl: String?
 }

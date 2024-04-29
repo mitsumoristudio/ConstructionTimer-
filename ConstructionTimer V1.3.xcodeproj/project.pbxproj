@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		E438D69C2BB733D800BEC409 /* DelayRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E438D69B2BB733D800BEC409 /* DelayRowView.swift */; };
 		E438D69E2BB7383500BEC409 /* DelayRowListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = E438D69D2BB7383500BEC409 /* DelayRowListing.swift */; };
+		E479107A2BE0351D008AB679 /* CurrentuserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47910792BE0351D008AB679 /* CurrentuserProfileViewModel.swift */; };
+		E479107C2BE035D2008AB679 /* CircularProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E479107B2BE035D2008AB679 /* CircularProfileImageView.swift */; };
+		E479107F2BE035EA008AB679 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E479107E2BE035EA008AB679 /* Kingfisher */; };
+		E47910812BE036FF008AB679 /* CurrentUserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47910802BE036FF008AB679 /* CurrentUserProfileView.swift */; };
 		E48242B12BADCD84003096CF /* ConstructionTimer_V1_3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48242B02BADCD84003096CF /* ConstructionTimer_V1_3App.swift */; };
 		E48242B32BADCD84003096CF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48242B22BADCD84003096CF /* ContentView.swift */; };
 		E48242B52BADCD85003096CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E48242B42BADCD85003096CF /* Assets.xcassets */; };
@@ -76,6 +80,7 @@
 		E4BF3BA12BE00208001CCC58 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BF3BA02BE00208001CCC58 /* RegistrationViewModel.swift */; };
 		E4BF3BA42BE01BD7001CCC58 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BF3BA32BE01BD7001CCC58 /* LoginView.swift */; };
 		E4BF3BA62BE01EF9001CCC58 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BF3BA52BE01EF9001CCC58 /* ResetPasswordView.swift */; };
+		E4BF3BA82BE02EB5001CCC58 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BF3BA72BE02EB5001CCC58 /* ContentViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +103,9 @@
 /* Begin PBXFileReference section */
 		E438D69B2BB733D800BEC409 /* DelayRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayRowView.swift; sourceTree = "<group>"; };
 		E438D69D2BB7383500BEC409 /* DelayRowListing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayRowListing.swift; sourceTree = "<group>"; };
+		E47910792BE0351D008AB679 /* CurrentuserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentuserProfileViewModel.swift; sourceTree = "<group>"; };
+		E479107B2BE035D2008AB679 /* CircularProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProfileImageView.swift; sourceTree = "<group>"; };
+		E47910802BE036FF008AB679 /* CurrentUserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserProfileView.swift; sourceTree = "<group>"; };
 		E48242AD2BADCD84003096CF /* ConstructionTimer V1.3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ConstructionTimer V1.3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E48242B02BADCD84003096CF /* ConstructionTimer_V1_3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructionTimer_V1_3App.swift; sourceTree = "<group>"; };
 		E48242B22BADCD84003096CF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -139,6 +147,7 @@
 		E4BF3BA02BE00208001CCC58 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		E4BF3BA32BE01BD7001CCC58 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E4BF3BA52BE01EF9001CCC58 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
+		E4BF3BA72BE02EB5001CCC58 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +179,7 @@
 				E4BF3B692BDFEF10001CCC58 /* FirebaseAuthCombine-Community in Frameworks */,
 				E4BF3B872BDFEF10001CCC58 /* FirebasePerformance in Frameworks */,
 				E4BF3B7F2BDFEF10001CCC58 /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
+				E479107F2BE035EA008AB679 /* Kingfisher in Frameworks */,
 				E4BF3B8D2BDFEF10001CCC58 /* FirebaseStorage in Frameworks */,
 				E4BF3B712BDFEF10001CCC58 /* FirebaseDynamicLinks in Frameworks */,
 				E4BF3B752BDFEF10001CCC58 /* FirebaseFirestoreCombine-Community in Frameworks */,
@@ -296,6 +306,8 @@
 				E48242FF2BADDBFC003096CF /* JikanView.swift */,
 				E48243052BADE47A003096CF /* DelayListView.swift */,
 				E49F8DDD2BBF4E0D00C642A1 /* CategoryCell.swift */,
+				E479107B2BE035D2008AB679 /* CircularProfileImageView.swift */,
+				E47910802BE036FF008AB679 /* CurrentUserProfileView.swift */,
 				E49F8DDF2BBF536600C642A1 /* UpdateDetailView.swift */,
 				E48243092BADEA9F003096CF /* DelayListCell.swift */,
 				E438D69B2BB733D800BEC409 /* DelayRowView.swift */,
@@ -321,6 +333,8 @@
 			isa = PBXGroup;
 			children = (
 				E48242EF2BADD2A4003096CF /* CoreDataViewModel.swift */,
+				E4BF3BA72BE02EB5001CCC58 /* ContentViewModel.swift */,
+				E47910792BE0351D008AB679 /* CurrentuserProfileViewModel.swift */,
 				E48242ED2BADD231003096CF /* JikanViewModel.swift */,
 				E4BF3B4F2BDFEC97001CCC58 /* LoginViewModel.swift */,
 				E4BF3BA02BE00208001CCC58 /* RegistrationViewModel.swift */,
@@ -402,6 +416,7 @@
 				E4BF3B8E2BDFEF10001CCC58 /* FirebaseStorageCombine-Community */,
 				E4BF3B962BDFF0F3001CCC58 /* GoogleSignIn */,
 				E4BF3B982BDFF0F3001CCC58 /* GoogleSignInSwift */,
+				E479107E2BE035EA008AB679 /* Kingfisher */,
 			);
 			productName = "ConstructionTimer V1.3";
 			productReference = E48242AD2BADCD84003096CF /* ConstructionTimer V1.3.app */;
@@ -478,6 +493,7 @@
 			packageReferences = (
 				E4BF3B3F2BDFE8B7001CCC58 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				E4BF3B952BDFF0F3001CCC58 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				E479107D2BE035EA008AB679 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = E48242AE2BADCD84003096CF /* Products */;
 			projectDirPath = "";
@@ -523,6 +539,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E49F8DE02BBF536600C642A1 /* UpdateDetailView.swift in Sources */,
+				E47910812BE036FF008AB679 /* CurrentUserProfileView.swift in Sources */,
 				E48242EE2BADD231003096CF /* JikanViewModel.swift in Sources */,
 				E48242B32BADCD84003096CF /* ContentView.swift in Sources */,
 				E48242EC2BADD1C3003096CF /* TImeViewModel.swift in Sources */,
@@ -546,7 +563,9 @@
 				E48242E12BADCE8A003096CF /* ButtonStyleService.swift in Sources */,
 				E438D69E2BB7383500BEC409 /* DelayRowListing.swift in Sources */,
 				E48243022BADDD83003096CF /* delayEnum.swift in Sources */,
+				E4BF3BA82BE02EB5001CCC58 /* ContentViewModel.swift in Sources */,
 				E48242E52BADCF19003096CF /* AppDelegate.swift in Sources */,
+				E479107C2BE035D2008AB679 /* CircularProfileImageView.swift in Sources */,
 				E48242F22BADD683003096CF /* ProgressRing.swift in Sources */,
 				E48242E32BADCEE6003096CF /* VisualEffectBlur.swift in Sources */,
 				E4BF3B9F2BE00192001CCC58 /* RegistrationView.swift in Sources */,
@@ -554,6 +573,7 @@
 				E4BF3BA12BE00208001CCC58 /* RegistrationViewModel.swift in Sources */,
 				E4BF3BA42BE01BD7001CCC58 /* LoginView.swift in Sources */,
 				E4BF3B9D2BDFF247001CCC58 /* UserModel.swift in Sources */,
+				E479107A2BE0351D008AB679 /* CurrentuserProfileViewModel.swift in Sources */,
 				E4BF3B592BDFEDA9001CCC58 /* AuthService.swift in Sources */,
 				E4BF3BA62BE01EF9001CCC58 /* ResetPasswordView.swift in Sources */,
 			);
@@ -889,6 +909,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E479107D2BE035EA008AB679 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
 		E4BF3B3F2BDFE8B7001CCC58 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -908,6 +936,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E479107E2BE035EA008AB679 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E479107D2BE035EA008AB679 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		E4BF3B5A2BDFEF10001CCC58 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E4BF3B3F2BDFE8B7001CCC58 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

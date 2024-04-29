@@ -13,6 +13,7 @@ struct ResetPasswordView: View {
     @StateObject var viewModel = RegistrationViewModel()
     @State var email: String = ""
     @Environment(\.dismiss) var dismiss
+    @State var animate: Bool = false
     
     func sendButtonUI() -> some View {
         Text("Send Reset Password Link")
@@ -48,6 +49,9 @@ struct ResetPasswordView: View {
                     }, label: {
                         sendButtonUI()
                     })
+                    .disabled(email == "" || animate)
+                    .opacity(email == "" ? 0.7: 1)
+                    
                     .padding(.horizontal, 20)
                     
                     
