@@ -9,6 +9,9 @@ import Foundation
 import FirebaseAuth
 import AuthenticationServices
 import SwiftUI
+import Firebase
+import GoogleSignIn
+import GoogleSignInSwift
 
 
 struct LoginView: View {
@@ -18,18 +21,23 @@ struct LoginView: View {
     @Environment(\.colorScheme) var colorScheme
     @State var animate: Bool = false
     
+    @State var isLoading: Bool = false
+    @AppStorage("log_Status") var log_Status = false
+    
+    private func getScreenReact() -> CGRect {
+        return UIScreen.main.bounds
+        
+    }
     
     var body: some View {
         NavigationStack {
-            VStack(spacing: 10) {
+            VStack(spacing: 5) {
                 
-                Image("Capsule_Construction")
+                Image("LoginPic")
                     .resizable()
-                    .scaledToFit()
-                    .clipShape(Circle())
-                    .frame(width: 70, height: 70)
-                    .opacity(0.9)
-                    .padding()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: getScreenReact().height / 3)
+                    .padding(.horizontal, 20)
                 
                 VStack(alignment: .leading, spacing: 18) {
                     TextField("Enter your email", text: $email)
@@ -74,7 +82,8 @@ struct LoginView: View {
                 
                 Button(action: {
                     Task {
-                        try await viewModel.singInwithGoogle()
+                 //       try await viewModel.signInwithGoogle()
+                        try await googleHandleSignIn()
                     }
                     
                 }, label: {
@@ -121,9 +130,51 @@ extension LoginView {
                 Text("Sign in with Google")
             }
             .frame(width: 352, height: 45)
-            .background(.ultraThinMaterial)
+            .background(.thickMaterial)
             .clipShape(RoundedRectangle(cornerRadius: 20))
             }
         }
     }
+
+extension LoginView {
+    func googleHandleSignIn() async throws {
+        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+        
+        // Creating Google SignIn Configuration object
+        let config = GIDConfiguration(clientID: clientID)
+        
+        isLoading = true
+        
+        GIDSignIn.sharedInstance.configuration = config
+        
+        guard let windowScene =  UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let window =  windowScene.windows.first,
+              let rootViewController = window.rootViewController else {
+            print("There is no root view controller")
+          return
+        }
+        do {
+            let userAutentication = try await GIDSignIn.sharedInstance.signIn(withPresenting: rootViewController)
+            let user = userAutentication.user
+            guard let idToken = user.idToken else {
+                throw fatalError("ID token missing")
+            }
+            let accessToken = user.accessToken
+            let credential = GoogleAuthProvider.credential(withIDToken: idToken.tokenString, accessToken: accessToken.tokenString)
+            
+            let result = try await Auth.auth().signIn(with: credential)
+            let firebaseUser = result.user
+            print("User \(firebaseUser.uid) sign  in with email \(firebaseUser.email ?? "unknown")")
+            
+            withAnimation {
+                log_Status = true
+            }
+            
+            return
+        } catch {
+            print(error.localizedDescription)
+        }
+        }
+    
+}
 

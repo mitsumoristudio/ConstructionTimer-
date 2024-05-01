@@ -3,7 +3,11 @@
 //  ConstructionTimer V1.3
 //
 //  Created by Satoshi Mitsumori on 4/29/24.
-//
+// 1) Add Google SignIn SDK & Add Package
+// 2) Add Reverse Client ID under the Info-plist file
+// 3) Go to Info - URL Type and add under the URL Schemes (reverse client ID)
+// 4) Unable Google Signin in Firebase Autentication
+// 5) Create GIDConfiguration with Google SignIn
 
 import Foundation
 import Firebase
@@ -18,6 +22,7 @@ final class AuthService {
     @Published var didsendPasswordReset: Bool = false
     
     
+    
     static let shared = AuthService()
     
     init() {
@@ -30,7 +35,7 @@ final class AuthService {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
             self.userSession = result.user
             
-            // MARK: fetchCurrentUser 
+            // MARK: fetchCurrentUser
             try await UserService.shared.fetchCurrentUser()
             
         } catch {
@@ -83,44 +88,82 @@ final class AuthService {
         try await Firestore.firestore().collection("users").document(uid).setData(userData)
         
         UserService.shared.currentUser = user // when we signin our user, it will automatically set up the currentUser
-        
+    
     }
     
     // MARK: - SignIn with Google using
-    
     @MainActor
-    func signInwithGoogle() async throws -> Bool {
+    func signInWithGoogle() async throws {
         guard let clientID = FirebaseApp.app()?.options.clientID else {
-            fatalError("No client ID was found in Firebase configuration")
+            fatalError("No client ID was found in Firebase Configuration")
         }
-        let configuration = GIDConfiguration(clientID: clientID)
-        GIDSignIn.sharedInstance.configuration = configuration
+        
+        let config = GIDConfiguration(clientID: clientID)
+        GIDSignIn.sharedInstance.configuration = config
         
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let window = windowScene.windows.first,
               let rootViewController = window.rootViewController else {
             print("There is no root view controller")
-            return false
+            return
         }
         do {
             let userAutentication = try await GIDSignIn.sharedInstance.signIn(withPresenting: rootViewController)
             let user = userAutentication.user
             guard let idToken = user.idToken else {
-                throw fatalError("ID token Missing")
+                throw fatalError("Id Token Missing")
             }
             let accessToken = user.accessToken
             let credential = GoogleAuthProvider.credential(withIDToken: idToken.tokenString, accessToken: accessToken.tokenString)
+            
             let result = try await Auth.auth().signIn(with: credential)
             let firebaseUser = result.user
+            print("User \(firebaseUser.uid) sign  in with email \(firebaseUser.email ?? "unknown")")
             
-            print("User \(firebaseUser.uid) signed in with email \(firebaseUser.email ?? "unknown")")
-            return true
             
+            
+            return
         } catch {
             print(error.localizedDescription)
-            return false
         }
-        return false
+        
     }
+    
+
 }
+  //  @MainActor
+//    func signInwithGoogle() async throws -> Bool {
+//        guard let clientID = FirebaseApp.app()?.options.clientID else {
+//            fatalError("No client ID was found in Firebase configuration")
+//        }
+//        let configuration = GIDConfiguration(clientID: clientID)
+//        GIDSignIn.sharedInstance.configuration = configuration
+//        
+//        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+//              let window = windowScene.windows.first,
+//              let rootViewController = window.rootViewController else {
+//            print("There is no root view controller")
+//            return false
+//        }
+//        do {
+//            let userAutentication = try await GIDSignIn.sharedInstance.signIn(withPresenting: rootViewController)
+//            let user = userAutentication.user
+//            guard let idToken = user.idToken else {
+//                throw fatalError("ID token Missing")
+//            }
+//            let accessToken = user.accessToken
+//            let credential = GoogleAuthProvider.credential(withIDToken: idToken.tokenString, accessToken: accessToken.tokenString)
+//            let result = try await Auth.auth().signIn(with: credential)
+//            let firebaseUser = result.user
+//            
+//            print("User \(firebaseUser.uid) signed in with email \(firebaseUser.email ?? "unknown")")
+//            return true
+//            
+//        } catch {
+//            print(error.localizedDescription)
+//            return false
+//        }
+//        return false
+//    }
+
 

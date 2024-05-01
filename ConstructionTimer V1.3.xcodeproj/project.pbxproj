@@ -13,6 +13,7 @@
 		E479107C2BE035D2008AB679 /* CircularProfileImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E479107B2BE035D2008AB679 /* CircularProfileImageView.swift */; };
 		E479107F2BE035EA008AB679 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E479107E2BE035EA008AB679 /* Kingfisher */; };
 		E47910812BE036FF008AB679 /* CurrentUserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47910802BE036FF008AB679 /* CurrentUserProfileView.swift */; };
+		E47910852BE04576008AB679 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E47910842BE04576008AB679 /* GoogleService-Info.plist */; };
 		E48242B12BADCD84003096CF /* ConstructionTimer_V1_3App.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48242B02BADCD84003096CF /* ConstructionTimer_V1_3App.swift */; };
 		E48242B32BADCD84003096CF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48242B22BADCD84003096CF /* ContentView.swift */; };
 		E48242B52BADCD85003096CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E48242B42BADCD85003096CF /* Assets.xcassets */; };
@@ -42,7 +43,6 @@
 		E482430A2BADEA9F003096CF /* DelayListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48243092BADEA9F003096CF /* DelayListCell.swift */; };
 		E49F8DDE2BBF4E0D00C642A1 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49F8DDD2BBF4E0D00C642A1 /* CategoryCell.swift */; };
 		E49F8DE02BBF536600C642A1 /* UpdateDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49F8DDF2BBF536600C642A1 /* UpdateDetailView.swift */; };
-		E4BF3B4E2BDFEC2C001CCC58 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4BF3B4D2BDFEC2C001CCC58 /* GoogleService-Info.plist */; };
 		E4BF3B502BDFEC97001CCC58 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BF3B4F2BDFEC97001CCC58 /* LoginViewModel.swift */; };
 		E4BF3B592BDFEDA9001CCC58 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BF3B582BDFEDA9001CCC58 /* AuthService.swift */; };
 		E4BF3B5B2BDFEF10001CCC58 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = E4BF3B5A2BDFEF10001CCC58 /* FirebaseAnalytics */; };
@@ -106,6 +106,8 @@
 		E47910792BE0351D008AB679 /* CurrentuserProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentuserProfileViewModel.swift; sourceTree = "<group>"; };
 		E479107B2BE035D2008AB679 /* CircularProfileImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProfileImageView.swift; sourceTree = "<group>"; };
 		E47910802BE036FF008AB679 /* CurrentUserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUserProfileView.swift; sourceTree = "<group>"; };
+		E47910842BE04576008AB679 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E47910862BE04763008AB679 /* ConstructionTimer-V1-3-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "ConstructionTimer-V1-3-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E48242AD2BADCD84003096CF /* ConstructionTimer V1.3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ConstructionTimer V1.3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E48242B02BADCD84003096CF /* ConstructionTimer_V1_3App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructionTimer_V1_3App.swift; sourceTree = "<group>"; };
 		E48242B22BADCD84003096CF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -138,7 +140,6 @@
 		E48243092BADEA9F003096CF /* DelayListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayListCell.swift; sourceTree = "<group>"; };
 		E49F8DDD2BBF4E0D00C642A1 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		E49F8DDF2BBF536600C642A1 /* UpdateDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDetailView.swift; sourceTree = "<group>"; };
-		E4BF3B4D2BDFEC2C001CCC58 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E4BF3B4F2BDFEC97001CCC58 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		E4BF3B582BDFEDA9001CCC58 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		E4BF3B9A2BDFF1DD001CCC58 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -229,6 +230,7 @@
 		E48242AF2BADCD84003096CF /* ConstructionTimer V1.3 */ = {
 			isa = PBXGroup;
 			children = (
+				E47910862BE04763008AB679 /* ConstructionTimer-V1-3-Info.plist */,
 				E48242B02BADCD84003096CF /* ConstructionTimer_V1_3App.swift */,
 				E48242B22BADCD84003096CF /* ContentView.swift */,
 				E48242DA2BADCDE5003096CF /* Components */,
@@ -241,7 +243,7 @@
 				E48242DF2BADCE5B003096CF /* ViewModel */,
 				E48242B62BADCD85003096CF /* Preview Content */,
 				E48242B42BADCD85003096CF /* Assets.xcassets */,
-				E4BF3B4D2BDFEC2C001CCC58 /* GoogleService-Info.plist */,
+				E47910842BE04576008AB679 /* GoogleService-Info.plist */,
 			);
 			path = "ConstructionTimer V1.3";
 			sourceTree = "<group>";
@@ -513,7 +515,7 @@
 			files = (
 				E48242B82BADCD85003096CF /* Preview Assets.xcassets in Resources */,
 				E48242B52BADCD85003096CF /* Assets.xcassets in Resources */,
-				E4BF3B4E2BDFEC2C001CCC58 /* GoogleService-Info.plist in Resources */,
+				E47910852BE04576008AB679 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,6 +744,7 @@
 				DEVELOPMENT_TEAM = P245NB73JW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ConstructionTimer-V1-3-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -772,6 +775,7 @@
 				DEVELOPMENT_TEAM = P245NB73JW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ConstructionTimer-V1-3-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct MainTabView: View {
+    @AppStorage("log_Status") var log_Status: Bool = false
     
     var body: some View {
         VStack {
@@ -49,12 +50,15 @@ struct MainTabView: View {
                         }
                     }
                     .tag(3)
+                
             }
         }
         .overlay(
         MessageView())
+       
+        }
     }
-    }
+    
 
 struct MainTabView_preview: PreviewProvider {
     static var previews: some View {

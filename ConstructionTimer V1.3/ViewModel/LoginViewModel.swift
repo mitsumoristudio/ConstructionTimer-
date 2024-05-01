@@ -9,10 +9,10 @@ import Foundation
 import AuthenticationServices
 import SwiftUI
 import Firebase
-import CryptoKit
 
 
 final class LoginViewModel: ObservableObject {
+    @Environment (\.dismiss) var dismiss
     
     @MainActor
     func loginUser(email: String, password: String) async throws {
@@ -21,7 +21,9 @@ final class LoginViewModel: ObservableObject {
     }
     
     @MainActor
-    func singInwithGoogle() async throws {
-        try await AuthService.shared.signInwithGoogle()
+    func signInwithGoogle() async throws {
+        try await AuthService.shared.signInWithGoogle()
+    //    try await AuthService.shared.signInWithGoogle()
+   
     }
 }
