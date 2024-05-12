@@ -3,6 +3,9 @@
 //  ConstructionTimer V1.3
 //
 //  Created by Satoshi Mitsumori on 4/29/24.
+// Copyright 2024 Satoshi Mitsumori. All rights reserved.
+
+
 // 1) Add Google SignIn SDK & Add Package
 // 2) Add Reverse Client ID under the Info-plist file
 // 3) Go to Info - URL Type and add under the URL Schemes (reverse client ID)
@@ -65,12 +68,12 @@ final class AuthService {
     }
     
     @MainActor
-    func createNewUser(withEmail email: String, password: String, fullName: String, userName: String) async throws {
+    func createNewUser(withEmail email: String, password: String, userName: String) async throws {
         do {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
             self.userSession = result.user
             
-            try await uploadUserInfo(withEmail: email, fullname: fullName, username: userName, uid: result.user.uid)
+            try await uploadUserInfo(withEmail: email, username: userName, uid: result.user.uid)
             
             print("Debug: Create user \(result.user.uid)")
             // MARK: Come back
@@ -82,8 +85,8 @@ final class AuthService {
     }
     
     @MainActor
-    private func uploadUserInfo(withEmail email: String, fullname: String, username: String, uid: String) async throws {
-        let user = UserModel(email: email, fullname: fullname, uid: uid, username: username)
+    private func uploadUserInfo(withEmail email: String, username: String, uid: String) async throws {
+        let user = UserModel(email: email, uid: uid, username: username)
         guard let userData = try? Firestore.Encoder().encode(user) else { return }
         try await Firestore.firestore().collection("users").document(uid).setData(userData)
         

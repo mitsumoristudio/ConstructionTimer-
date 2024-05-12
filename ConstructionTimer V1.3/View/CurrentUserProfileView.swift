@@ -3,7 +3,7 @@
 //  ConstructionTimer V1.3
 //
 //  Created by Satoshi Mitsumori on 4/29/24.
-//
+// Copyright 2024 Satoshi Mitsumori. All rights reserved.
 
 import Foundation
 import SwiftUI
@@ -29,11 +29,6 @@ struct CurrentUserProfileView: View {
                         VStack(alignment: .leading, spacing: 12) {
                             
                             VStack(alignment: .leading, spacing: 4) {
-                                //  Text("Stashville") or
-                                Text(currentUser?.fullname ?? "")
-                                
-                                    .font(.title2)
-                                    .fontWeight(.semibold)
                                 
                                 Text(currentUser?.username ?? "")
                                 

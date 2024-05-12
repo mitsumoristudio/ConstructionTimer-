@@ -3,7 +3,7 @@
 //  ConstructionTimer V1.3
 //
 //  Created by Satoshi Mitsumori on 3/22/24.
-//
+//  Copyright 2024 Satoshi Mitsumori. All rights reserved.
 
 import Foundation
 import UIKit

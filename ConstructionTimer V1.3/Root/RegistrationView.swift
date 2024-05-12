@@ -3,7 +3,7 @@
 //  ConstructionTimer V1.3
 //
 //  Created by Satoshi Mitsumori on 4/29/24.
-//
+// Copyright 2024 Satoshi Mitsumori. All rights reserved.
 
 import Foundation
 import SwiftUI
@@ -12,7 +12,6 @@ struct RegistrationView: View {
     @ObservedObject var registrationVM = RegistrationViewModel()
     @State private var email = ""
     @State private var password = ""
-    @State private var fullname = ""
     @State private var username = ""
     @Environment (\.dismiss) var dismiss
     
@@ -25,16 +24,21 @@ struct RegistrationView: View {
         showAlert.toggle()
     }
     
+    private func getScreenReact() -> CGRect {
+        return UIScreen.main.bounds
+    }
+    
+    
     var body: some View {
         NavigationStack {
+            
             VStack(spacing: 10) {
-                Image("Capsule_Construction")
+                
+                Image("LoginPic2")
                     .resizable()
-                    .scaledToFit()
-                    .clipShape(Circle())
-                    .frame(width: 70, height: 70)
-                    .opacity(0.9)
-                    .padding()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: getScreenReact().height / 3)
+                    .padding(.horizontal, 20)
                 
                 VStack(alignment: .leading, spacing: 18) {
                     TextField("Enter your email", text: $email)
@@ -42,9 +46,6 @@ struct RegistrationView: View {
                         .modifier(ThreadTextFieldModifier())
                     
                     SecureField("Enter your password", text: $password)
-                        .modifier(ThreadTextFieldModifier())
-                    
-                    TextField("Enter your full name", text: $fullname)
                         .modifier(ThreadTextFieldModifier())
                     
                     TextField("Enter your username", text: $username)
@@ -55,10 +56,10 @@ struct RegistrationView: View {
                     Button(action: {
                         if password.count >= 4 {
                             Task {
-                                try await registrationVM.createUser(email : email,
+                                try await registrationVM.createUser(email: email,
                                                                     password: password,
-                                                                    fullname: fullname,
-                                                                    username: username) }
+                                                                    username: username)
+                            }
                         } else {
                             showAlertTitle(title: "Password must contain at least 4 letters or numbers")
                             
